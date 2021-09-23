@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+git checkout -b phase2
+
+sed -i 's/_qbasic/_q/g' .travis.yml
+
+sed -i '12,13s/basic//g' Makefile
