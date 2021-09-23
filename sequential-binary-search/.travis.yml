@@ -1,0 +1,15 @@
+language:   cpp
+compiler:   g++
+
+addons:
+    apt:
+        packages:
+            - cppcheck
+            - libunittest++-dev
+script: 
+    #- cppcheck --error-exitcode=1 --quiet .
+    - make travis 
+    - ./test
+
+notifications:
+    email: false
