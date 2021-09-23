@@ -1,6 +1,4 @@
-/* bubble sort
-   Please remove the word 'REMOVE' in file name. 
-*/
+
 
 #include "mjgTimer.h"
 
