@@ -1,0 +1,13 @@
+language:   cpp
+compiler:   g++
+
+addons:
+    apt:
+        packages:
+            - libunittest++-dev
+script: 
+    - make travis 
+    - ./test
+    
+notifications:
+    email: false
