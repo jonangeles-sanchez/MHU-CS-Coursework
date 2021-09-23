@@ -1,0 +1,10 @@
+language:   cpp
+compiler:   g++
+
+script: 
+    - make 
+    - ./.test.sh
+
+
+notifications:
+    email: false
