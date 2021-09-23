@@ -1,0 +1,21 @@
+language:   cpp
+compiler:   g++
+
+addons:
+    apt:
+        packages:
+            - cppcheck
+            - valgrind
+            - libunittest++-dev
+
+before_install:
+    - wget --spider -q http://huckleberry.mhu.edu/cs220/unittest_qbasic.cpp; if [ $? -eq 0 ]; then echo "Download the new unittest_q.cpp"; rm unittest_q.cpp; wget http://huckleberry.mhu.edu/cs220/unittest_qbasic.cpp; else echo "No unittest_qbasic.cpp found"; fi
+
+script: 
+    - make travisbasic
+    - ./test
+    - make
+    - valgrind --leak-check=full --error-exitcode=1 ./queue
+
+notifications:
+    email: false
